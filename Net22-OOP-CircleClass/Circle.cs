@@ -18,41 +18,47 @@ namespace Net22_OOP_CircleClass
             this.radius = radius;
         }
 
+        //Method to round up numbers and keep a maximum of 3 decimals.
+        public float RoundUp(float math)
+        {
+            //Explicit type-casting and limiting output to 3 decimals.
+            float roundedNumber = (float)Math.Round(math, 3);
+
+            return roundedNumber;
+        }
+
         public float GetArea()
         {
-            float math,
+            float area,
                   result;
 
-            math = radius * radius * pi;
+            area = radius * radius * pi;
 
-            //Explicit type-casting and limiting output to 3 decimals.
-            result = (float)Math.Round(math, 3);
+            result = RoundUp(area);
 
             return result;
         }
 
         public float GetVolume()
         {
-            float math,
+            float volume,
                   result;
 
-            math = (4.0f / 3f) * pi * radius * radius * radius;
+            volume = (4.0f / 3f) * pi * radius * radius * radius;
 
-            //Explicit type-casting and limiting output to 3 decimals.
-            result = (float)Math.Round(math, 3);
+            result = RoundUp(volume);
 
             return result;
         }
 
         public float GetCircumference()
         {
-            float math,
+            float circumference,
                   result;
 
-            math = 2 * pi * radius;
+            circumference = 2 * pi * radius;
 
-            //Explicit type-casting and limiting output to 3 decimals.
-            result = (float)Math.Round(math, 3);
+            result = RoundUp(circumference);
 
             return result;
         }
